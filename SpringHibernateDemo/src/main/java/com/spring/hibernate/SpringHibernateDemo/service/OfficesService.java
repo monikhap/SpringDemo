@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.spring.hibernate.SpringHibernateDemo.dto.OfficesDTO;
+
 @Service
 public interface OfficesService {
 	
-	public List<String> getDB();
+	public List<OfficesDTO> getOffices();
 
 }

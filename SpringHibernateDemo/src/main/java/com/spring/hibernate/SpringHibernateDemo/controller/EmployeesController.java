@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.hibernate.SpringHibernateDemo.dto.EmployeesDTO;
 import com.spring.hibernate.SpringHibernateDemo.service.EmployeesService;
 
 @RestController
@@ -16,9 +17,9 @@ public class EmployeesController {
 	EmployeesService employeesService;
 
 	@RequestMapping("/getEmployees")
-	public ResponseEntity<List<String>> getTables() {
-		List<String> tables=employeesService.getDB();
-		return new ResponseEntity<List<String>>(tables, HttpStatus.OK);
+	public ResponseEntity<List<EmployeesDTO>> getTables() {
+		List<EmployeesDTO> tables=employeesService.getEmployees();
+		return new ResponseEntity<List<EmployeesDTO>>(tables, HttpStatus.OK);
 	}
 
 }

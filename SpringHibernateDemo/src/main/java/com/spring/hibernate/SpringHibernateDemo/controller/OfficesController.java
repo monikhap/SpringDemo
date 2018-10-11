@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.hibernate.SpringHibernateDemo.dto.OfficesDTO;
 import com.spring.hibernate.SpringHibernateDemo.service.OfficesService;
 
 @RestController
@@ -16,9 +17,9 @@ public class OfficesController {
 	OfficesService officesService;
 
 	@RequestMapping("/getOffices")
-	public ResponseEntity<List<String>> getTables() {
-		List<String> tables=officesService.getDB();
-		return new ResponseEntity<List<String>>(tables, HttpStatus.OK);
+	public ResponseEntity<List<OfficesDTO>> getTables() {
+		List<OfficesDTO> tables=officesService.getOffices();
+		return new ResponseEntity<List<OfficesDTO>>(tables, HttpStatus.OK);
 	}
 
 }

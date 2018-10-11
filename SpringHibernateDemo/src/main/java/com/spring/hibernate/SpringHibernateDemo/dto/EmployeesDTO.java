@@ -1,5 +1,6 @@
 package com.spring.hibernate.SpringHibernateDemo.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 public class EmployeesDTO {
 	
 	@Id
+	@Column(name="employeeNumber")
 	public double employeeNumber;
 	public String email;
 	public String extension;
@@ -16,7 +18,7 @@ public class EmployeesDTO {
 	public String jobTitle;
 	public String lastName;	
 	public String officeCode;
-	public double reportsTo	;
+	public Double reportsTo	;
 	
 	public String getEmail() {
 		return email;
@@ -60,10 +62,10 @@ public class EmployeesDTO {
 	public void setOfficeCode(String officeCode) {
 		this.officeCode = officeCode;
 	}
-	public double getReportsTo() {
+	public Double getReportsTo() {
 		return reportsTo;
 	}
-	public void setReportsTo(double reportsTo) {
+	public void setReportsTo(Double reportsTo) {
 		this.reportsTo = reportsTo;
 	}
 	

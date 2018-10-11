@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.hibernate.SpringHibernateDemo.dao.OfficesDAO;
+import com.spring.hibernate.SpringHibernateDemo.dto.OfficesDTO;
 import com.spring.hibernate.SpringHibernateDemo.service.OfficesService;
 
 @Service
@@ -14,9 +15,9 @@ public class OfficesServiceImpl implements OfficesService {
 		@Autowired
 		OfficesDAO officesDao;
 
-		public List<String> getDB() {
+		public List<OfficesDTO> getOffices() {
 
-			List<String> tables=officesDao.getDB();
+			List<OfficesDTO> tables=officesDao.getOffices();
 			return tables;
 
 		}

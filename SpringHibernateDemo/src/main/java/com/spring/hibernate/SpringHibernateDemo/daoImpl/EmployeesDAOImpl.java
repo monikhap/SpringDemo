@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.spring.hibernate.SpringHibernateDemo.dao.EmployeesDAO;
+import com.spring.hibernate.SpringHibernateDemo.dto.EmployeesDTO;
 import com.spring.hibernate.SpringHibernateDemo.utils.SpringHibernateUtil;
 
 @Component
@@ -15,11 +16,11 @@ public class EmployeesDAOImpl implements EmployeesDAO {
 	@Autowired
 	SpringHibernateUtil util;
 
-	public List<String> getDB() {
+	public List<EmployeesDTO> getEmployees() {
 		
 		Session session=util.getSessionfactory().openSession();
 		session.beginTransaction();
-		List<String> tables=session.createSQLQuery("show tables").list();
+		List<EmployeesDTO> tables=session.createQuery("from EmployeesDTO").list();
 		return tables;
 
 	}

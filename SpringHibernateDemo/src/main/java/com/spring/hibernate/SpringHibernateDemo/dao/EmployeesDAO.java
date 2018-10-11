@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.spring.hibernate.SpringHibernateDemo.dto.EmployeesDTO;
+
 @Component
 public interface EmployeesDAO {
 	
-	public List<String> getDB();
+	public List<EmployeesDTO> getEmployees();
 
 }
