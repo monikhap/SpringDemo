@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.spring.hibernate.SpringHibernateDemo.dao.OfficesDAO;
+import com.spring.hibernate.SpringHibernateDemo.dto.CustomersDTO;
 import com.spring.hibernate.SpringHibernateDemo.dto.OfficesDTO;
 import com.spring.hibernate.SpringHibernateDemo.utils.SpringHibernateUtil;
 
@@ -23,6 +24,17 @@ public class OfficesDAOImpl implements OfficesDAO {
 		List<OfficesDTO> tables=session.createQuery("from OfficesDTO").list();
 		return tables;
 
+	}
+	
+	@Override
+	public void insertOffices(OfficesDTO officesDTO) {
+		
+		Session session=util.getSessionfactory().openSession();
+		session.beginTransaction();
+		session.save(officesDTO);
+		session.getTransaction().commit();
+		session.close();
+		
 	}
 
 }

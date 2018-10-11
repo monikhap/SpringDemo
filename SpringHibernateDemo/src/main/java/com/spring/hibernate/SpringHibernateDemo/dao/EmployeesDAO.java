@@ -10,5 +10,6 @@ import com.spring.hibernate.SpringHibernateDemo.dto.EmployeesDTO;
 public interface EmployeesDAO {
 	
 	public List<EmployeesDTO> getEmployees();
+	public void insertEmployees(EmployeesDTO employeesDTO);
 
 }

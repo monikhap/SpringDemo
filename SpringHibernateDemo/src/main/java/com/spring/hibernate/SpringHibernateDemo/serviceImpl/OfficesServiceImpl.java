@@ -21,5 +21,11 @@ public class OfficesServiceImpl implements OfficesService {
 			return tables;
 
 		}
+		
+		@Override
+		public void insertOffices(OfficesDTO officesDTO) {
+			officesDao.insertOffices(officesDTO);
+			
+		}
 
 }

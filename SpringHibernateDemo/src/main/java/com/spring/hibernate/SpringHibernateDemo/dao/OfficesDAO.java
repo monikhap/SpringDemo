@@ -10,5 +10,6 @@ import com.spring.hibernate.SpringHibernateDemo.dto.OfficesDTO;
 public interface OfficesDAO {
 	
 	public List<OfficesDTO> getOffices();
+	public void insertOffices(OfficesDTO officesDTO);
 
 }

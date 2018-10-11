@@ -13,7 +13,7 @@ public class CustomersDTO {
 	@Id
 	@GeneratedValue
 	@Column(name="customerNumber")
-	public double customerNumber;
+	public Double customerNumber;
 	public String customerName;
 	public String contactLastName;
 	public String contactFirstName;
@@ -27,10 +27,10 @@ public class CustomersDTO {
 	public String salesRepEmployeeNumber;
 	public String creditLimit;
 	
-	public double getCustomerNumber() {
+	public Double getCustomerNumber() {
 		return customerNumber;
 	}
-	public void setCustomerNumber(double customerNumber) {
+	public void setCustomerNumber(Double customerNumber) {
 		this.customerNumber = customerNumber;
 	}
 	public String getCustomerName() {

@@ -21,5 +21,11 @@ public class EmployeesServiceImpl implements EmployeesService {
 		return tables;
 
 	}
+	
+	@Override
+	public void insertEmployees(EmployeesDTO employeesDTO) {
+		employeesDao.insertEmployees(employeesDTO);
+		
+	}
 
 }

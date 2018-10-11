@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +21,14 @@ public class OfficesController {
 	public ResponseEntity<List<OfficesDTO>> getTables() {
 		List<OfficesDTO> tables=officesService.getOffices();
 		return new ResponseEntity<List<OfficesDTO>>(tables, HttpStatus.OK);
+	}
+	
+	@RequestMapping("/insertOffices")
+	public ResponseEntity<String> insertOffices(@RequestBody OfficesDTO officesDTO) {
+		
+		officesService.insertOffices(officesDTO);
+		
+		return new ResponseEntity<String>("Customer details saved", HttpStatus.OK);
 	}
 
 }

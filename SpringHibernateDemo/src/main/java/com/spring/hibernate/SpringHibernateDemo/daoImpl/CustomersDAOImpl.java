@@ -24,8 +24,21 @@ public class CustomersDAOImpl implements CustomersDAO {
 		Session session=util.getSessionfactory().openSession();
 		session.beginTransaction();
 		List<CustomersDTO> tables=session.createQuery("from CustomersDTO").list();
+		session.getTransaction().commit();
+		session.close();
 		return tables;
 
+	}
+
+	@Override
+	public void insertCustomers(CustomersDTO customersDTO) {
+		
+		Session session=util.getSessionfactory().openSession();
+		session.beginTransaction();
+		session.save(customersDTO);
+		session.getTransaction().commit();
+		session.close();
+		
 	}
 
 }

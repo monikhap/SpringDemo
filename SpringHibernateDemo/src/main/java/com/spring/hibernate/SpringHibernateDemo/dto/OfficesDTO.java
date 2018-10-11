@@ -1,6 +1,8 @@
 package com.spring.hibernate.SpringHibernateDemo.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +11,8 @@ import javax.persistence.Table;
 public class OfficesDTO {
 	
 	@Id
+	@GeneratedValue
+	@Column(name="officeCode")
 	public String officeCode;
 	public String city;
 	public String phone;

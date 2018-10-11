@@ -10,5 +10,7 @@ import com.spring.hibernate.SpringHibernateDemo.dto.CustomersDTO;
 public interface CustomersService {
 	
 	public List<CustomersDTO> getCustomers();
+	
+	public void insertCustomers(CustomersDTO customersDTO);
 
 }

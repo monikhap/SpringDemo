@@ -22,4 +22,10 @@ public class CustomersServiceImpl implements CustomersService {
 
 	}
 
+	@Override
+	public void insertCustomers(CustomersDTO customersDTO) {
+		customersDao.insertCustomers(customersDTO);
+		
+	}
+
 }
